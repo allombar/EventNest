@@ -3,70 +3,297 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EventNest - Organisez vos événements en un seul endroit</title>
+    <title>EventNest – Organisez vos événements en un seul endroit</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            background-color: #f9f9f9;
-            color: #333;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
         }
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* En-tête */
         header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 3rem 2rem;
-            margin-bottom: 2rem;
+            background: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto 2rem;
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            font-weight: 700;
+            color: #28a745;
+        }
+        .logo img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        .hero p {
+            font-size: 20px;
+            color: #6c757d;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
         .cta-button {
-            background-color: #ff9800;
+            background: #28a745;
             color: white;
-            padding: 12px 24px;
+            padding: 15px 30px;
             border: none;
-            border-radius: 5px;
-            font-size: 16px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
             cursor: pointer;
             text-decoration: none;
             display: inline-block;
+            transition: background 0.3s;
         }
         .cta-button:hover {
-            background-color: #e68a00;
+            background: #218838;
         }
-        section {
-            padding: 2rem;
-            max-width: 800px;
+        /* Problème/Solution */
+        .problem-section {
+            padding: 80px 0;
+            background: white;
+        }
+        .problem-section h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        .problem-content {
+            display: flex;
+            align-items: center;
+            margin-top: 50px;
+        }
+        .problem-text {
+            flex: 1;
+            padding-right: 50px;
+        }
+        .problem-text h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+        .problem-visual {
+            flex: 1;
+            text-align: center;
+        }
+        /* Fonctionnalités */
+        .features-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+        .features-section h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            color: #2c3e50;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .feature-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+        .feature-card p {
+            color: #6c757d;
+        }
+        /* Appel à l'action final */
+        .final-cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #28a745 0%, #218838 100%);
+            text-align: center;
+            color: white;
+        }
+        .final-cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .final-cta p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        .email-form {
+            display: flex;
+            justify-content: center;
+            max-width: 500px;
             margin: 0 auto;
         }
-        footer {
-            margin-top: 2rem;
-            padding: 1rem;
-            background-color: #333;
+        .email-input {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            border-radius: 50px 0 0 50px;
+            font-size: 16px;
+        }
+        .email-submit {
+            background: #2c3e50;
             color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 0 50px 50px 0;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        .social-links {
+            margin-bottom: 20px;
+        }
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            font-size: 24px;
+        }
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            .problem-content {
+                flex-direction: column;
+            }
+            .problem-text {
+                padding-right: 0;
+                margin-bottom: 30px;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- En-tête -->
     <header>
-        <h1>EventNest</h1>
-        <p>Regroupez cagnottes, messages et galeries pour vos événements en un seul endroit.</p>
-        <a href="#" class="cta-button">Rejoindre la bêta</a>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <!-- Remplace par ton logo -->
+                    <img src="https://via.placeholder.com/40" alt="EventNest Logo">
+                    EventNest
+                </div>
+            </div>
+        </div>
     </header>
-    <section>
-        <h2>Pourquoi choisir EventNest ?</h2>
-        <p>EventNest simplifie l'organisation de vos événements privés ou publics en centralisant tout ce dont vous avez besoin : cagnottes, messages et galeries photos, le tout en un seul endroit sécurisé et facile à utiliser.</p>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Organisez vos événements en un seul endroit</h1>
+            <p>Avec EventNest, gérez les cagnottes, les messages et les photos de vos événements sans jamais quitter l'application.</p>
+            <a href="#signup" class="cta-button">Je veux tester la bêta</a>
+        </div>
     </section>
+    <!-- Problème/Solution -->
+    <section class="problem-section">
+        <div class="container">
+            <h2>Pourquoi EventNest ?</h2>
+            <div class="problem-content">
+                <div class="problem-text">
+                    <h3>Un seul outil pour tout gérer</h3>
+                    <p>Plus besoin de jongler entre WhatsApp, PayPal et Google Photos. EventNest centralise tout ce dont vous avez besoin pour organiser vos événements, que ce soit un anniversaire, un mariage ou un projet associatif.</p>
+                </div>
+                <div class="problem-visual">
+                    <img src="https://via.placeholder.com/400x300" alt="EventNest Interface">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Fonctionnalités -->
+    <section class="features-section">
+        <div class="container">
+            <h2>Nos fonctionnalités</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>💰 Cagnottes</h3>
+                    <p>Collectez de l'argent pour un cadeau commun ou un projet, avec un suivi transparent des contributions.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>💬 Messages</h3>
+                    <p>Discutez avec les participants de l'événement sans quitter l'application.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>📷 Galerie</h3>
+                    <p>Partagez et consultez toutes les photos de l'événement en un seul endroit.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Appel à l'action final -->
+    <section class="final-cta" id="signup">
+        <div class="container">
+            <h2>Rejoignez la bêta dès maintenant</h2>
+            <p>Soyez parmi les premiers à tester EventNest et organisez vos événements sans stress.</p>
+            <form class="email-form">
+                <input type="email" class="email-input" placeholder="Votre email">
+                <button type="submit" class="email-submit">S'inscrire</button>
+            </form>
+        </div>
+    </section>
+    <!-- Footer -->
     <footer>
-        <p>© 2025 EventNest. Tous droits réservés.</p>
+        <div class="container">
+            <div class="social-links">
+                <!-- Remplace par tes liens sociaux -->
+                <a href="#">📘</a>
+                <a href="#">🐦</a>
+                <a href="#">💼</a>
+            </div>
+            <p>&copy; 2025 EventNest. Tous droits réservés.</p>
+        </div>
     </footer>
+    <!-- Script pour gérer l'inscription -->
+    <script>
+        document.querySelector('.email-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = document.querySelector('.email-input').value;
+            alert(`Merci pour votre intérêt, ${email} ! Nous vous contacterons bientôt pour la bêta.`);
+        });
+    </script>
 </body>
 </html>
